@@ -1,0 +1,29 @@
+.sidebar {
+    background-color: #fff;
+    /* position: fixed; */
+}
+
+#send {
+    background: #111430;
+    border-radius: 5px;
+    width: 150px;
+    height: 50px;
+    color: #fff;
+}
+
+.logout {
+    margin-bottom: '500px';
+}
+
+.sidebar li {
+    margin-bottom: 2em;
+}
+
+.sidebar li:hover span {
+    display: inline-block;
+    transform: translate(5px);
+}
+
+.sidebar svg {
+    margin-right: 5px;
+}

@@ -1,0 +1,12 @@
+.style{
+    margin-top: 10em;
+    border: 1px solid #ABABAB;
+    height: 300px;
+    width: 400px;
+}
+#google{
+    background: #FFFFFF;
+    border: 1px solid #C7C7C7;
+    box-sizing: border-box;
+    border-radius: 57px;
+}
