@@ -8,7 +8,7 @@ import './login.css'
 import logo from '../../creative-agency/images/logos/logo.png'
 
 const Login = () => {
-    const {loggedInUser, setLoggedInUser} = useContext(UserContext);
+    const { setLoggedInUser } = useContext(UserContext);
     const history = useHistory();
     const location = useLocation();
     const { from } = location.state || { from: { pathname: "/" } };
@@ -20,8 +20,8 @@ const Login = () => {
     const handleGoogleSignIn = () => {
         var provider = new firebase.auth.GoogleAuthProvider();
         firebase.auth().signInWithPopup(provider).then(function (result) {
-            const { displayName, email,photoURL } = result.user;
-            const signedInUser = { name: displayName, email,img:photoURL };
+            const { displayName, email, photoURL } = result.user;
+            const signedInUser = { name: displayName, email, img: photoURL };
             setLoggedInUser(signedInUser);
             storeAuthToken();
             // ...

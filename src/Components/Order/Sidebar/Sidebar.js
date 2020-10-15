@@ -4,10 +4,10 @@ import { UserContext } from '../../../App';
 import '../order.css'
 
 const Sidebar = () => {
-    const { admin, setAdmin } = useContext(UserContext);
+    const { admin} = useContext(UserContext);
 
     return (
-        <div className="sidebar d-flex flex-column justify-content-between col-md-2 py-5 px-4" style={{ height: "90vh" }}>
+        <div className="sidebar d-flex flex-column justify-content-between col-md-2 col-sm-2 fluid py-5 px-4" style={{ height: "90vh" }}>
             <ul className="list-unstyled">
                 <li>
                     {
@@ -27,8 +27,6 @@ const Sidebar = () => {
                                 </svg> Service Lists</span>
                             </Link>
                     }
-
-
                 </li>
                 <div>
                     <li>
@@ -43,8 +41,8 @@ const Sidebar = () => {
                                 :
                                 <Link to="/addService" className="text-dark">
                                     <span> <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M8.5 3.54169V13.4584" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                                        <path d="M3.54163 8.5H13.4583" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                        <path d="M8.5 3.54169V13.4584" stroke="black" stroke-width="2" strokeLinecap="round" strokeLinejoin="round" />
+                                        <path d="M3.54163 8.5H13.4583" stroke="black" stroke-width="2" strokeLinecap="round" strokeLinejoin="round" />
                                     </svg>Add Service</span>
                                 </Link>
                         }
@@ -68,9 +66,6 @@ const Sidebar = () => {
                                     </svg> Make Admin </span>
                                 </Link>
                         }
-
-
-
                     </li>
                 </div>
             </ul>

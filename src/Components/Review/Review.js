@@ -5,8 +5,8 @@ import OrderHeader from '../Order/OrderHeader/OrderHeader';
 import Sidebar from '../Order/Sidebar/Sidebar';
 
 const Review = () => {
-    const { register, handleSubmit, watch, errors } = useForm();
-    const {loggedInUser, setLoggedInUser}= useContext(UserContext);
+    const { register, handleSubmit, errors } = useForm();
+    const { loggedInUser } = useContext(UserContext);
     const onSubmit = data => {
         // console.log('form submitted', data)
         const orderDetails = { ...loggedInUser, data }
@@ -26,16 +26,16 @@ const Review = () => {
     // watch input value by passing the name of it
 
     return (
-        <div style={{ backgroundColor: '#E5E5E5', height: '100vh' }}>
+        <div style={{ backgroundColor: '#E5E5E5', height: '100vh', height: '100%' }}>
             <OrderHeader></OrderHeader>
             <div className="d-flex">
                 <Sidebar />
                 <main className='container d-flex  mt-2'>
                     <form className="ship-form" onSubmit={handleSubmit(onSubmit)}>
-                        <input name="clientName" className='form-control' style={{ width: '550px', height: '60px' }} ref={register({ required: true })} placeholder="your name / companyName" defaultValue={loggedInUser.name} /> <br />
+                        <input name="clientName" className='form-control' style={{ width: '550px', height: '60px' }} ref={register({ required: true })} placeholder="your name" defaultValue={loggedInUser.name} /> <br />
                         {errors.name && <span className="error">Name is required</span>}
 
-                        <input name="workingPosition" className='form-control' style={{ width: '550px', height: '60px' }} ref={register({ required: true })} /> <br />
+                        <input name="workingPosition" className='form-control' style={{ width: '550px', height: '60px' }} ref={register({ required: true })} placeholder='Company’s name, Designation' /> <br />
 
                         <textarea name="details" className='form-control' style={{ width: '550px', height: '30%' }} ref={register({ required: true })} placeholder="Product Details" /> <br />
                         <br />

@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import service1 from '../../../creative-agency/images/icons/service1.png'
 import './Services.css'
 import { Link } from 'react-router-dom';
 
@@ -15,7 +14,7 @@ const Services = () => {
     }, [])
 
 
-  
+
     return (
         <div className="container" style={{ marginTop: '10%' }}>
             <h1 className="text-center">Provide awesome <span style={{ color: '#7AB259' }}>services</span> </h1>
@@ -24,9 +23,9 @@ const Services = () => {
                     allServices.map(data => <Link key={data._id} to={'/Services/' + data._id} style={{ textDecoration: 'none', color: '#111430' }}><div className="col mb-4">
                         <div id="card">
                             <div className="card-body text-center">
-                                <img src={data.img} style={{ width: "75px" }} alt="..." />
+                                <img src={`data:image/png;base64,${data.image.img}`} style={{ width: '75px' }} className="card-img-top" alt="..." />
                                 <h5 className="card-title">{data.name}</h5>
-                                <p className="card-text">{data.shortDetail}</p>
+                                <p className="card-text">{data.details}</p>
                             </div>
                         </div>
                     </div></Link>)

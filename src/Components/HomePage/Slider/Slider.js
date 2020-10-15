@@ -1,4 +1,3 @@
-import first from '../../../creative-agency/images/carousel-1.png'
 import React, { useState, useEffect } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
@@ -25,22 +24,10 @@ const Slider = () => {
 
         >
           {
-            sliderImg.map(slider => <SwiperSlide key={slider._id}> <img src={slider.img} style={{ width: '465.49px', margin: '50px',height: '334.7px'}} alt="" /><br /> </SwiperSlide>
+            sliderImg.map(slider => <SwiperSlide key={slider._id}> <img src={slider.img} style={{ width: '465.49px', margin: '50px',height: '50vh'}} alt="" /><br /> </SwiperSlide>
 
             )
           }
-
-
-
-          {/* 
-          <SwiperSlide><img src={first} style={{ width: '465.49px', margin: '50px' }} alt="" /> </SwiperSlide> 
-          <SwiperSlide><img src={first} style={{ width: '465.49px', margin: '50px' }} alt="" /> </SwiperSlide><br />
-          <SwiperSlide> <img src={first} style={{ width: '465.49px', margin: '50px' }} alt="" /> </SwiperSlide><br />
-          <SwiperSlide> <img src={first} style={{ width: '465.49px', margin: '50px' }} alt="" /> </SwiperSlide><br />
-          <SwiperSlide> <img src={first} style={{ width: '465.49px', margin: '50px' }} alt="" /> </SwiperSlide><br />
-          <SwiperSlide> <img src={first} style={{ width: '465.49px', margin: '50px' }} alt="" /> </SwiperSlide><br />
-          <SwiperSlide> <img src={first} style={{ width: '465.49px', margin: '50px' }} alt="" /> </SwiperSlide><br /> */}
-
 
         </Swiper>
       </div>

@@ -4,7 +4,7 @@ import { UserContext } from '../../../App';
 import { Link } from 'react-router-dom';
 
 const OrderHeader = () => {
-    const {loggedInUser, setLoggedInUser}= useContext(UserContext);
+    const { loggedInUser } = useContext(UserContext);
     return (
         <div className="navbar navbar-expand-lg navbar-light bg-white">
 

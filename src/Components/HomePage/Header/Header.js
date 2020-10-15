@@ -6,7 +6,7 @@ import { UserContext } from '../../../App';
 
 
 const Header = () => {
-    const { loggedInUser, setLoggedInUser } = useContext(UserContext);
+    const { loggedInUser } = useContext(UserContext);
 
     return (
         <div className="container">
@@ -21,10 +21,13 @@ const Header = () => {
                             <p className="nav-link" >Home <span className="sr-only">(current)</span></p>
                         </li>
                         <li className="nav-item">
-                            <p className="nav-link" >Features</p>
+                            <p className="nav-link" >Our Portfolio</p>
                         </li>
                         <li className="nav-item">
-                            <p className="nav-link">Pricing</p>
+                            <p className="nav-link">Our Team</p>
+                        </li>
+                        <li className="nav-item">
+                            <p className="nav-link">Contact Us</p>
                         </li>
                         <li className="nav-item">
                             <Link to="/login">
