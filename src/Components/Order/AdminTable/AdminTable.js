@@ -1,4 +1,13 @@
 import React, { useEffect, useState } from 'react';
+import Dropdown from 'react-dropdown';
+import 'react-dropdown/style.css';
+
+const options = [
+    { value: 'Pending', label: 'Pending' },
+    { value: 'On Going', label: 'On Going' },
+    { value: 'Done', label: 'Done' }
+]
+
 
 const AdminTable = () => {
     const [details, setDetails] = useState([])
@@ -8,6 +17,20 @@ const AdminTable = () => {
             .then(data => setDetails(data))
 
     }, [])
+    const change = (e, id) => {
+        fetch(`http://localhost:8080/update/${id}`, {
+            method: 'PATCH',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({status: e.value})
+        })
+        .then(res => res.json())
+        .then(data => {
+            if(data){
+                alert('Status updated successfully')
+            }
+        })
+    }
+    const defaultOption = options[0];
     return (
         <div>
 
@@ -29,6 +52,10 @@ const AdminTable = () => {
                                 <td>{user.email}</td>
                                 <td>{user.service}</td>
                                 <td>{user.description}</td>
+                                <td><Dropdown options={options} onChange={(e) => {change(e, `${user._id}`)}} value={defaultOption} placeholder="Select an option" /></td>
+                                
+
+                                
                             </tr>)
                         }
                     </tbody>
