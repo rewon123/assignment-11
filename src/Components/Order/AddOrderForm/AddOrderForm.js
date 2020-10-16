@@ -13,14 +13,14 @@ const AddOrderForm = () => {
     const { id } = useParams()
     const history = useHistory()
     useEffect(() => {
-        fetch(`http://localhost:8080/Services/${id}`)
+        fetch(`https://whymanwhy132.herokuapp.com/Services/${id}`)
             .then(response => response.json())
             .then(data => {
                 setServiceData(data)
             })
     }, [])
     useEffect(() => {
-        fetch(`http://localhost:8080/Alladmin?email=${loggedInUser.email}`)
+        fetch(`https://whymanwhy132.herokuapp.com/Alladmin?email=${loggedInUser.email}`)
             .then(response => response.json())
             .then(data => setAdmin(data))
     }, [])
@@ -39,7 +39,7 @@ const AddOrderForm = () => {
         formData.append('email', loggedInUser.email);
         formData.append('name', loggedInUser.name);
         formData.append('description', data.description);
-        fetch('http://localhost:8080/placeOrder', {
+        fetch('https://whymanwhy132.herokuapp.com/placeOrder', {
             method: 'POST',
             body: formData
         })

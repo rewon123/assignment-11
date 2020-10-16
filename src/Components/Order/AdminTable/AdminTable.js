@@ -12,14 +12,14 @@ const options = [
 const AdminTable = () => {
     const [details, setDetails] = useState([])
     useEffect(() => {
-        fetch(`http://localhost:8080/allServiceList`)
+        fetch(`https://whymanwhy132.herokuapp.com/allServiceList`)
             .then(response => response.json())
             .then(data => setDetails(data))
 
     }, [])
 
     const change = (e, id) => {
-        fetch(`http://localhost:8080/update/${id}`, {
+        fetch(`https://whymanwhy132.herokuapp.com/update/${id}`, {
             method: 'PATCH',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ status: e.value })

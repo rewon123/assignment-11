@@ -4,7 +4,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 const Slider = () => {
   const [sliderImg, setSliderImg] = useState([])
   useEffect(() => {
-    fetch(`http://localhost:8080/examples`)
+    fetch(`https://whymanwhy132.herokuapp.com/examples`)
       .then(response => response.json())
       .then(data => {setSliderImg(data)
         // console.log(data);

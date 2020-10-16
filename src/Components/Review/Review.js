@@ -11,7 +11,7 @@ const Review = () => {
         // console.log('form submitted', data)
         const orderDetails = { ...loggedInUser, data }
 
-        fetch('http://localhost:8080/addReview', {
+        fetch('https://whymanwhy132.herokuapp.com/addReview', {
             method: 'POST',
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify(orderDetails)
@@ -23,7 +23,6 @@ const Review = () => {
                 }
             })
     };
-    // watch input value by passing the name of it
 
     return (
         <div style={{ backgroundColor: '#E5E5E5', height: '100vh', height: '100%' }}>

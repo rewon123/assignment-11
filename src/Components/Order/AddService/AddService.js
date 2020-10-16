@@ -13,7 +13,7 @@ const AddService = () => {
         formData.append('image', image);
         formData.append('name', data.name);
         formData.append('details', data.details);
-        fetch('http://localhost:8080/addServices', {
+        fetch('https://whymanwhy132.herokuapp.com/addServices', {
             method: 'POST',
             body: formData
         })
@@ -63,7 +63,7 @@ const AddService = () => {
                                 <input name="image" type="file" onChange={fileChange} ref={register({ required: true })} style={{ width: "50%" }} className="p-4" />
                             </div>
                         </div>
-                        <input type="submit" className='btn' value="Add" style={{ backgroundColor: "#111430", color: "white", padding: "1% 5%", borderRadius: "5px" }} />
+                        <input type="submit" className='btn btn-success' value="Add" style={{  color: "white", padding: "1% 5%", borderRadius: "5px" }} />
                     </form>
                 </main>
             </div >
