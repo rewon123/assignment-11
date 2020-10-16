@@ -17,18 +17,19 @@ const AdminTable = () => {
             .then(data => setDetails(data))
 
     }, [])
+
     const change = (e, id) => {
         fetch(`http://localhost:8080/update/${id}`, {
             method: 'PATCH',
-            headers: {'Content-Type': 'application/json'},
-            body: JSON.stringify({status: e.value})
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ status: e.value })
         })
-        .then(res => res.json())
-        .then(data => {
-            if(data){
-                alert('Status updated successfully')
-            }
-        })
+            .then(res => res.json())
+            .then(data => {
+                if (data) {
+                    alert('Status updated successfully')
+                }
+            })
     }
     const defaultOption = options[0];
     return (
@@ -45,20 +46,21 @@ const AdminTable = () => {
                             <th scope="col">Status</th>
                         </tr>
                     </thead>
-                    <tbody>
-                        {
-                            details.map(user => <tr className="bg-light" key={user._id}>
-                                <td>{user.name}</td>
-                                <td>{user.email}</td>
-                                <td>{user.service}</td>
-                                <td>{user.description}</td>
-                                <td><Dropdown options={options} onChange={(e) => {change(e, `${user._id}`)}} value={defaultOption} placeholder="Select an option" /></td>
-                                
-
-                                
-                            </tr>)
-                        }
-                    </tbody>
+                    {
+                        details.length ? <tbody>
+                            {
+                                details.map(user => <tr className="bg-light" key={user._id}>
+                                    <td>{user.name}</td>
+                                    <td>{user.email}</td>
+                                    <td>{user.service}</td>
+                                    <td>{user.description}</td>
+                                    <td><Dropdown options={options} onChange={(e) => { change(e, `${user._id}`) }} value={defaultOption} placeholder="Select an option" /></td>
+                                </tr>)
+                            }
+                        </tbody>
+                            :
+                            <img src="https://assets.website-files.com/5c7fdbdd4e3feeee8dd96dd2/5ce46f8ffd710a2c22c15e48_cust_ami.gif" alt="" />
+                    }
                 </table>
             </main>
         </div >
